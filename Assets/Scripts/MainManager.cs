@@ -94,5 +94,13 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        MenuManger.instance.playerScore = m_Points;
+        MenuManger.instance.savePlayerData();
+    }
+
+    public void backToMenu()
+    {
+        SceneManager.LoadScene(0);
+        MenuUIHandler.instance.menuCanvas.SetActive(true);
     }
 }

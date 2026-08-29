@@ -293,6 +293,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1945346692}
+        m_TargetAssemblyTypeName: MenuUIHandler, Assembly-CSharp
+        m_MethodName: savePlayerData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &350811557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,7 +372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547d43e694a2fff41af9d502a60eb9bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeightestScoreText: {fileID: 1958183823}
+  HeightestPSText: {fileID: 1958183823}
+  playerName: 
+  playerScore: 0
 --- !u!4 &457126686
 Transform:
   m_ObjectHideFlags: 0
@@ -616,8 +630,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1945346692}
         m_TargetAssemblyTypeName: MenuUIHandler, Assembly-CSharp
-        m_MethodName: savePlayerData
-        m_Mode: 5
+        m_MethodName: newPlayerData
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1389,6 +1403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bff0120e60dd7f4492a3094965f354b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuCanvas: {fileID: 1945346687}
 --- !u!1 &1958183821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,8 +1438,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.98032, y: 21.1}
-  m_SizeDelta: {x: 92.0002, y: 10.9636}
+  m_AnchoredPosition: {x: 0.98031, y: 21.5}
+  m_SizeDelta: {x: 131.7316, y: 9.6213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1958183823
 MonoBehaviour:
@@ -1473,14 +1488,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 7
+  m_fontSizeBase: 7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

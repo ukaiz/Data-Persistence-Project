@@ -4,7 +4,10 @@ using TMPro;
 public class MenuManger : MonoBehaviour
 {
     public static MenuManger instance {get; private set;}
-    public TMP_Text HeightestScoreText;
+    public TMP_Text HeightestPSText;
+    public string playerName;
+    public int playerScore;
+    
     public void Awake()
     {
         if(instance != null)
@@ -14,20 +17,22 @@ public class MenuManger : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+
     }
+
 
     [System.Serializable]
     class SaveData
     {
         public string playerName;
-        // public int playerScore;
+        public int playerScore;
     }
 
-    public void savePlayerData(string playerName)
+    public void savePlayerData()
     {
         SaveData data = new SaveData();
         data.playerName = playerName;
-        // data.playerScore = playerScore;
+        data.playerScore = playerScore;
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
@@ -39,7 +44,7 @@ public class MenuManger : MonoBehaviour
         {
             string json = File.ReadAllText(path);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
-            HeightestScoreText.text = $"Hei: {data.playerName}";
+            HeightestPSText.text = $"Name: {data.playerName} Score: {data.playerScore}";
         }
     }
 }
