@@ -7,18 +7,20 @@ using UnityEditor;
 #endif
 public class MenuUIHandler : MonoBehaviour
 {
-    public static MenuUIHandler instance {get; private set;}
+    public TMP_Text heightestPSText;
+
+    // public static MenuUIHandler instance {get; private set;}
     public GameObject menuCanvas;
     public void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-        loadPlayerData();
+        // if (instance != null)
+        // {
+        //     Destroy(gameObject);
+        //     return;
+        // }
+        // instance = this;
+        // DontDestroyOnLoad(gameObject);
+        updateHeightestPS();
     }
     public void StartGame()
     {
@@ -34,24 +36,24 @@ public class MenuUIHandler : MonoBehaviour
         Application.Quit();
 #endif
     }
-    public void newPlayerData(string playerName)
+    public void assignPlayerName(string playerName)
     {   
         MenuManger.instance.playerName = playerName;
         Debug.Log("User Name : " + MenuManger.instance.playerName);
     }
-    public void savePlayerData()
-    {   
-        MenuManger.instance.savePlayerData();
-    }
-
     public void loadPlayerData()
     {
-        MenuManger.instance.loadPlayerData();
+        MenuManger.instance.LoadHighScores();
     }
 
     public void activateMenu()
     {
         menuCanvas.SetActive(true);
+    }
+
+    public void updateHeightestPS()
+    {
+        heightestPSText.text = MenuManger.instance.highScoreResult();
     }
 }
 

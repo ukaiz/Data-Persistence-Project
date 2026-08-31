@@ -282,20 +282,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1945346692}
-        m_TargetAssemblyTypeName: MainMenuUIHandler, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1945346692}
         m_TargetAssemblyTypeName: MenuUIHandler, Assembly-CSharp
-        m_MethodName: savePlayerData
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -372,7 +360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547d43e694a2fff41af9d502a60eb9bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeightestPSText: {fileID: 1958183823}
   playerName: 
   playerScore: 0
 --- !u!4 &457126686
@@ -630,7 +617,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1945346692}
         m_TargetAssemblyTypeName: MenuUIHandler, Assembly-CSharp
-        m_MethodName: newPlayerData
+        m_MethodName: assignPlayerName
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -961,8 +948,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4
-  m_fontSizeBase: 4
+  m_fontSize: 3
+  m_fontSizeBase: 3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1403,6 +1390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bff0120e60dd7f4492a3094965f354b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heightestPSText: {fileID: 1958183823}
   menuCanvas: {fileID: 1945346687}
 --- !u!1 &1958183821
 GameObject:
@@ -1438,8 +1426,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.98031, y: 21.5}
-  m_SizeDelta: {x: 131.7316, y: 9.6213}
+  m_AnchoredPosition: {x: -0.000000059605, y: 26.8}
+  m_SizeDelta: {x: 131.7316, y: 28.021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1958183823
 MonoBehaviour:
@@ -1488,8 +1476,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 7
-  m_fontSizeBase: 7
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1698,8 +1686,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4
-  m_fontSizeBase: 4
+  m_fontSize: 3
+  m_fontSizeBase: 3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0

@@ -94,13 +94,16 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        
         MenuManger.instance.playerScore = m_Points;
-        MenuManger.instance.savePlayerData();
+        MenuManger.instance.SubmitScore(MenuManger.instance.playerName, MenuManger.instance.playerScore);
+        BestScoreText.text = $"Best Score : {MenuManger.instance.playerName} : {MenuManger.instance.playerScore}";
+        Debug.Log("User Score : " + MenuManger.instance.playerScore + " User Name : " + MenuManger.instance.playerName);
     }
 
     public void backToMenu()
     {
         SceneManager.LoadScene(0);
-        MenuUIHandler.instance.menuCanvas.SetActive(true);
     }
+
 }
