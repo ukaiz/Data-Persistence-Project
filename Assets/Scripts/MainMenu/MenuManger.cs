@@ -52,7 +52,7 @@ public class MenuManger : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
 
-    public void LoadHighScores()
+    public string LoadHighScores()
     {
         string SavePath = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(SavePath))
@@ -60,19 +60,16 @@ public class MenuManger : MonoBehaviour
             string json = File.ReadAllText(SavePath);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
             HighScores = data.highScores;
-        }
-    }
 
-    public string highScoreResult()
-    {
-        string result = "";
+            string result = "";
 
-        for (int i = 0; i < MenuManger.instance.HighScores.Count; i++)
-        {
-            var entry = MenuManger.instance.HighScores[i];
-            result += $"{i + 1}. {entry.playerName} : {entry.playerScore}\n";
+            for (int i = 0; i < HighScores.Count; i++)
+            {
+                var entry = HighScores[i];
+                result += $"{i}. {entry.playerName} : {entry.playerScore}\n";
+            }
+            return result;
         }
-        Debug.Log("High Score Result : " + result);
-        return result;
+        return "No High Scores Found";
     }
 }

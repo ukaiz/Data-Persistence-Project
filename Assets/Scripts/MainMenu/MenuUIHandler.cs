@@ -9,18 +9,11 @@ public class MenuUIHandler : MonoBehaviour
 {
     public TMP_Text heightestPSText;
 
-    // public static MenuUIHandler instance {get; private set;}
     public GameObject menuCanvas;
-    public void Awake()
+
+    public void Start()
     {
-        // if (instance != null)
-        // {
-        //     Destroy(gameObject);
-        //     return;
-        // }
-        // instance = this;
-        // DontDestroyOnLoad(gameObject);
-        updateHeightestPS();
+        loadPlayerData();
     }
     public void StartGame()
     {
@@ -43,17 +36,7 @@ public class MenuUIHandler : MonoBehaviour
     }
     public void loadPlayerData()
     {
-        MenuManger.instance.LoadHighScores();
-    }
-
-    public void activateMenu()
-    {
-        menuCanvas.SetActive(true);
-    }
-
-    public void updateHeightestPS()
-    {
-        heightestPSText.text = MenuManger.instance.highScoreResult();
+        heightestPSText.text = MenuManger.instance.LoadHighScores();
     }
 }
 
